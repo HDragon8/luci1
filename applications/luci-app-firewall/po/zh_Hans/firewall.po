@@ -428,7 +428,7 @@ msgstr "防火墙配置迁移"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:82
 msgid "Flow offloading type"
-msgstr "流量卸载类型"
+msgstr "流量加载类型"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:64
 msgid "Forward"
@@ -522,11 +522,11 @@ msgstr "授予访问防火墙配置的权限"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:85
 msgid "Hardware based offloading for routing with/without NAT."
-msgstr "基于硬件的路由卸载，支持或不支持NAT。"
+msgstr "基于硬件的路由加载，支持或不支持NAT。"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:85
 msgid "Hardware flow offloading"
-msgstr "硬件流量卸载"
+msgstr "硬件流量加载"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/ipsets.js:144
 msgid "IP (range)"
@@ -963,7 +963,7 @@ msgstr "重写端口"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:76
 msgid "Routing/NAT Offloading"
-msgstr "路由/NAT 卸载"
+msgstr "路由/NAT 加载"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:290
 msgid "SNAT - Rewrite to specific source IP or port"
@@ -988,11 +988,11 @@ msgstr ""
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:84
 msgid "Software based offloading for routing/NAT."
-msgstr "基于软件的路由/NAT卸载。"
+msgstr "基于软件的路由/NAT加载。"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:84
 msgid "Software flow offloading"
-msgstr "软件流量卸载"
+msgstr "软件流量加载"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:260
 msgid "Source IP address"
