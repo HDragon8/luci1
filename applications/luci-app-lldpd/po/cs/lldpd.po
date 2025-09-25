@@ -448,8 +448,7 @@ msgstr "Koncový bod médií (třída 2)"
 
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:476
 msgid "Must be a greater than zero number optionally suffixed with \"ms\""
-msgstr ""
-"Je třeba, aby bylo číslo větší než nula, volitelně včetně jednotky „ms“"
+msgstr "Je třeba, aby bylo číslo větší než nula, volitelně včetně jednotky „ms“"
 
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:495
 msgid "Must be a number"

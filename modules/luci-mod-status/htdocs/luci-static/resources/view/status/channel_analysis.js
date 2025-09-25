@@ -26,17 +26,17 @@ return view.extend({
 		var icon, title, value;
 
 		if (signalPercent < 0)
-			icon = L.resource('icons/signal-none.png');
+			icon = L.resource('icons/signal-none.svg');
 		else if (signalPercent == 0)
-			icon = L.resource('icons/signal-0.png');
+			icon = L.resource('icons/signal-000-000.svg');
 		else if (signalPercent < 25)
-			icon = L.resource('icons/signal-0-25.png');
+			icon = L.resource('icons/signal-000-025.svg');
 		else if (signalPercent < 50)
-			icon = L.resource('icons/signal-25-50.png');
+			icon = L.resource('icons/signal-025-050.svg');
 		else if (signalPercent < 75)
-			icon = L.resource('icons/signal-50-75.png');
+			icon = L.resource('icons/signal-050-075.svg');
 		else
-			icon = L.resource('icons/signal-75-100.png');
+			icon = L.resource('icons/signal-075-100.svg');
 
 		value = '%d\xa0%s'.format(signalValue, _('dBm'));
 		title = '%s: %d %s'.format(_('Signal'), signalValue, _('dBm'));
@@ -228,7 +228,7 @@ return view.extend({
 
 				if (chan_analysis.offset_tbl[local_wifi.channel] != null && local_wifi.center_chan1) {
 					var center_channels = [local_wifi.center_chan1],
-					    chan_width_text = local_wifi.htmode.replace(/(V)*H[TE]/,''), /* Handle HT VHT HE */
+					    chan_width_text = local_wifi.htmode.replace(/[EV]*H[TE]/,''), /* Handle HT VHT HE EHT */
 					    chan_width = parseInt(chan_width_text)/10;
 
 					if (local_wifi.center_chan2) {

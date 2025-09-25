@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-19 19:36+0200\n"
-"PO-Revision-Date: 2024-12-02 19:57+0000\n"
-"Last-Translator: \"L. VLO\" <veloso.lu@googlemail.com>\n"
+"PO-Revision-Date: 2025-08-11 21:01+0000\n"
+"Last-Translator: Adam El adnani <eladnaniadam595@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsstatistics/fr/>\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.9-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:47
 msgid "0 - At most once"
@@ -110,6 +110,10 @@ msgstr ""
 msgid "By setting this, CPU is not aggregate of all processors on the system"
 msgstr ""
 
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:79
+msgid "CACert"
+msgstr ""
+
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/contextswitch.js:6
 msgid "CPU Context Switches Plugin Configuration"
 msgstr ""
@@ -164,7 +168,7 @@ msgstr "Configuration du Plugin Chrony"
 msgid "Chrony monitoring enabled"
 msgstr ""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:72
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:85
 msgid "CleanSession"
 msgstr ""
 
@@ -388,6 +392,7 @@ msgid "Enable this plugin"
 msgstr "Activer ce greffon"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/collectd.js:113
+#, fuzzy
 msgid "Enabled"
 msgstr "Activé"
 
@@ -446,7 +451,7 @@ msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:61
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:68
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:75
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:88
 msgid "False"
 msgstr ""
 
@@ -937,7 +942,7 @@ msgstr ""
 msgid "Mqtt Plugin Configuration"
 msgstr ""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:86
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:99
 msgid "Mqtt plugin enabled"
 msgstr ""
 
@@ -1377,6 +1382,18 @@ msgstr "Connexions TCP"
 msgid "TCPConns Plugin Configuration"
 msgstr "Configuration du plugin des connexions TCP"
 
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:74
+msgid "TLS 1.2"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:75
+msgid "TLS 1.3"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:72
+msgid "TLSProtocol"
+msgstr ""
+
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/network.js:15
 msgid "TTL for network packets"
 msgstr "TTL des paquets-réseau"
@@ -1692,13 +1709,13 @@ msgstr ""
 msgid "Timeout for polling chrony"
 msgstr ""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:79
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:92
 msgid "Topic"
 msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:60
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:67
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:74
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:87
 msgid "True"
 msgstr ""
 

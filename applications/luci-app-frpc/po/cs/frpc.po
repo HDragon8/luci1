@@ -101,8 +101,7 @@ msgstr "Komprese"
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:16
 msgid "Config files include in temporary config file"
-msgstr ""
-"Které soubory s nastaveními zahrnout do dočasného souboru s nastaveními"
+msgstr "Které soubory s nastaveními zahrnout do dočasného souboru s nastaveními"
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:57
 msgid "Custom domains"

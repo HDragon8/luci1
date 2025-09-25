@@ -35,11 +35,11 @@ function render_iface(dev, alias) {
 	    up   = dev ? dev.isUp() : false;
 
 	return E('span', { class: 'cbi-tooltip-container' }, [
-		E('img', { 'class' : 'middle', 'src': L.resource('icons/%s%s.png').format(
+		E('img', { 'class' : 'middle', 'src': L.resource('icons/%s%s.svg').format(
 			alias ? 'alias' : type,
 			up ? '' : '_disabled') }),
 		E('span', { 'class': 'cbi-tooltip ifacebadge large' }, [
-			E('img', { 'src': L.resource('icons/%s%s.png').format(
+			E('img', { 'src': L.resource('icons/%s%s.svg').format(
 				type, up ? '' : '_disabled') }),
 			L.itemlist(E('span', { 'class': 'left' }), [
 				_('Type'),      dev ? dev.getTypeI18n() : null,
@@ -68,7 +68,7 @@ function render_status(node, ifc, with_device) {
 	desc = desc ? '%s (%s)'.format(desc, ifc.getI18n()) : ifc.getI18n();
 
 	const changecount = with_device ? 0 : count_changes(ifc.getName());
-	const maindev = ifc.getL3Device() || ifc.getDevice();
+	const maindev = ifc.getL3Device() ?? ifc.getDevice();
 	const macaddr = maindev ? maindev.getMAC() : null;
 	const cond00 = !changecount && !ifc.isDynamic() && !ifc.isAlias();
 	const cond01 = cond00 && macaddr;
@@ -99,11 +99,12 @@ function render_status(node, ifc, with_device) {
 }
 
 function render_modal_status(node, ifc) {
-	var dev = ifc ? (ifc.getDevice() || ifc.getL3Device() || ifc.getL3Device()) : null;
+	// order is important: ifc.getL3Device() can determine dev.getType for tunnel configs
+	const dev = ifc ? (ifc.getL3Device() ?? ifc.getDevice()) : null;
 
 	dom.content(node, [
 		E('img', {
-			'src': L.resource('icons/%s%s.png').format(dev ? dev.getType() : 'ethernet', ifc.isUp() ? '' : '_disabled'),
+			'src': L.resource('icons/%s%s.svg').format(dev ? dev.getType() : 'ethernet', ifc.isUp() ? '' : '_disabled'),
 			'title': dev ? dev.getTypeI18n() : _('Not present')
 		}),
 		ifc ? render_status(E('span'), ifc, true) : E('em', _('Interface not present or not connected yet.'))
@@ -294,10 +295,10 @@ return view.extend({
 			}
 
 			if (stat) {
-				var dev = ifc.getDevice();
+				const dev = ifc.getL3Device() ?? ifc.getDevice();
 				dom.content(stat, [
 					E('img', {
-						'src': L.resource('icons/%s%s.png').format(dev ? dev.getType() : 'ethernet', ifc.isUp() ? '' : '_disabled'),
+						'src': L.resource('icons/%s%s.svg').format(dev ? dev.getType() : 'ethernet', ifc.isUp() ? '' : '_disabled'),
 						'title': dev ? dev.getTypeI18n() : _('Not present')
 					}),
 					render_status(E('span'), ifc, true)
@@ -515,12 +516,8 @@ return view.extend({
 		};
 
 		s.addModalOptions = function(s) {
-			var protoval = uci.get('network', s.section, 'proto'),
-			    protoclass = protoval ? network.getProtocol(protoval) : null,
+			var protoval = uci.get('network', s.section, 'proto') || 'none',
 			    o, proto_select, proto_switch, type, stp, igmp, ss, so;
-
-			if (!protoval)
-				return;
 
 			return network.getNetwork(s.section).then(L.bind(function(ifc) {
 				var protocols = network.getProtocols();
@@ -544,6 +541,7 @@ return view.extend({
 
 				proto_select = s.taboption('general', form.ListValue, 'proto', _('Protocol'));
 				proto_select.modalonly = true;
+				proto_select.default = 'none';
 
 				proto_switch = s.taboption('general', form.Button, '_switch_proto');
 				proto_switch.modalonly  = true;
@@ -612,7 +610,7 @@ return view.extend({
 				for (var i = 0; i < protocols.length; i++) {
 					proto_select.value(protocols[i].getProtocol(), protocols[i].getI18n());
 
-					if (protocols[i].getProtocol() != uci.get('network', s.section, 'proto'))
+					if (protocols[i].getProtocol() != protoval)
 						proto_switch.depends('proto', protocols[i].getProtocol());
 				}
 
@@ -661,7 +659,7 @@ return view.extend({
 					ss.taboption('general', form.Flag, 'ignore', _('Ignore interface'), _('Disable <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> for this interface.'));
 
 					if (protoval == 'static') {
-						so = ss.taboption('general', form.Value, 'start', _('Start'), _('Lowest leased address as offset from the network address.'));
+						so = ss.taboption('general', form.Value, 'start', _('Start', 'DHCP IP range start address'), _('Lowest leased address as offset from the network address.'));
 						so.optional = true;
 						so.datatype = 'or(uinteger,ip4addr("nomask"))';
 						so.default = '100';
@@ -930,9 +928,23 @@ return view.extend({
 					so.datatype = 'range(1,62)';
 					so.depends('dhcpv6', 'server');
 
-					so = ss.taboption('ipv6', form.DynamicList, 'dns', _('Announced IPv6 DNS servers'),
+					so = ss.taboption('ipv6', form.DynamicList, 'dns', _('Announce IPv6 DNS servers'),
 						_('Specifies a fixed list of IPv6 DNS server addresses to announce via DHCPv6. If left unspecified, the device will announce itself as IPv6 DNS server unless the <em>Local IPv6 DNS server</em> option is disabled.'));
 					so.datatype = 'ip6addr("nomask")'; /* restrict to IPv6 only for now since dnsmasq (DHCPv4) does not honour this option */
+					so.depends('ra', 'server');
+					so.depends({ ra: 'hybrid', master: '0' });
+					so.depends('dhcpv6', 'server');
+					so.depends({ dhcpv6: 'hybrid', master: '0' });
+
+					so = ss.taboption('ipv6', form.DynamicList, 'dnr', _('Announce encrypted DNS servers'),
+						_('Specifies a fixed list of encrypted DNS server addresses to announce via DHCPv6/<abbr title="Router Advertisement">RA</abbr> (see %s).')
+						 .format('<a href="%s" target="_blank">RFC9463</a>').format('https://www.rfc-editor.org/rfc/rfc9463') + '<br/>' +
+						_('IPv4 addresses are only supported if <code>odhcpd</code> also handles DHCPv4.') + '<br/>' +
+						_('Syntax: <code>&lt;numeric priority&gt; &lt;domain-name&gt; [IP,...] [SVC parameter ...]</code>') + '<br/>' +
+						_('Example: <code>100 dns.example.com 2001:db8::53,192.168.1.53 alpn=doq port=853</code>') + '<br/>' +
+						_('Note: the <code>_lifetime=&lt;seconds&gt;</code> SVC parameter sets the lifetime of the announced server (use <code>0</code> to indicate a server which should no longer be used).')
+					);
+					so.datatype = 'string';
 					so.depends('ra', 'server');
 					so.depends({ ra: 'hybrid', master: '0' });
 					so.depends('dhcpv6', 'server');
@@ -946,7 +958,7 @@ return view.extend({
 					so.depends({ dhcpv6: 'server', dns: /^$/ });
 					so.depends({ dhcpv6: 'hybrid', dns: /^$/, master: '0' });
 
-					so = ss.taboption('ipv6', form.DynamicList, 'domain', _('Announced DNS domains'),
+					so = ss.taboption('ipv6', form.DynamicList, 'domain', _('Announce DNS domains'),
 						_('Specifies a fixed list of DNS search domains to announce via DHCPv6. If left unspecified, the local device DNS search domain will be announced.'));
 					so.datatype = 'hostname';
 					so.depends('ra', 'server');
@@ -1292,7 +1304,7 @@ return view.extend({
 					'data-network': section_id
 				}, [
 					E('img', {
-						'src': L.resource('icons/ethernet_disabled.png'),
+						'src': L.resource('icons/ethernet_disabled.svg'),
 						'style': 'width:16px; height:16px'
 					}),
 					E('br'), E('small', '?')
@@ -1402,7 +1414,7 @@ return view.extend({
 			var isNew = (uci.get('network', s.section, 'name') == null),
 			    dev = getDevice(s.section);
 
-			nettools.addDeviceOptions(s, dev, isNew);
+			nettools.addDeviceOptions(s, dev, isNew, rtTables);
 		};
 
 		s.handleModalCancel = function(map /*, ... */) {
@@ -1475,6 +1487,9 @@ return view.extend({
 			case 'veth':
 				return 'veth';
 
+			case 'vrf':
+				return 'vrf';
+
 			case 'wifi':
 			case 'alias':
 			case 'switch':
@@ -1509,6 +1524,9 @@ return view.extend({
 
 			case 'veth':
 				return _('Virtual Ethernet');
+
+			case 'vrf':
+				return _('Virtual Routing and Forwarding (VRF)');
 
 			default:
 				return _('Network device');
@@ -1570,6 +1588,17 @@ return view.extend({
 			_('ULA for IPv6 is analogous to IPv4 private network addressing.') + ' ' +
 			_('This prefix is randomly generated at first install.'));
 		o.datatype = 'cidr6';
+
+		const l3mdevhelp1 = _('%s services running on this device in the default VRF context (ie., not bound to any VRF device) shall work across all VRF domains.');
+		const l3mdevhelp2 = _('Off means VRF traffic will be handled exclusively by sockets bound to VRFs.');
+
+		o = s.option(form.Flag, 'tcp_l3mdev', _('TCP Layer 3 Master Device (tcp_l3mdev) accept'),
+			l3mdevhelp1.format('TCP') + '<br/>' +
+			l3mdevhelp2);
+
+		o = s.option(form.Flag, 'udp_l3mdev', _('UDP Layer 3 Master Device (udp_l3mdev) accept'),
+			l3mdevhelp1.format('UDP') + '<br/>' +
+			l3mdevhelp2);
 
 		o = s.option(form.ListValue, 'packet_steering', _('Packet Steering'), _('Enable packet steering across CPUs. May help or hinder network speed.'));
 		o.value('0', _('Disabled'));

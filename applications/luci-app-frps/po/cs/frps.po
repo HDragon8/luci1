@@ -101,8 +101,7 @@ msgstr "Běžná nastavení"
 
 #: applications/luci-app-frps/htdocs/luci-static/resources/view/frps.js:15
 msgid "Config files include in temporary config file"
-msgstr ""
-"Které soubory s nastaveními zahrnout do dočasného souboru s nastaveními"
+msgstr "Které soubory s nastaveními zahrnout do dočasného souboru s nastaveními"
 
 #: applications/luci-app-frps/htdocs/luci-static/resources/view/frps.js:39
 msgid "Custom 404 page"
@@ -393,8 +392,8 @@ msgid ""
 "<br />By default, this value is 0."
 msgstr ""
 "VhostHttpPort určuje port na kterém server očekává požadavky na HTTP Vhost. "
-"Pokud je tato hodnota 0 (nula), server nebude naslouchat HTTP požadavkům."
-"<br />Ve výchozím stavu je tato hodnota 0."
+"Pokud je tato hodnota 0 (nula), server nebude naslouchat HTTP požadavkům.<br "
+"/>Ve výchozím stavu je tato hodnota 0."
 
 #: applications/luci-app-frps/htdocs/luci-static/resources/view/frps.js:26
 msgid ""
@@ -411,8 +410,8 @@ msgid ""
 "<br />By default, this value is 0."
 msgstr ""
 "VhostHttpsPort určuje port, na kterém server očekává požadavky HTTPS Vhost. "
-"Pokud je tato hodnota 0 (nula), server nebude naslouchat HTTP požadavkům."
-"<br />Ve výchozím stavu je tato hodnota 0."
+"Pokud je tato hodnota 0 (nula), server nebude naslouchat HTTP požadavkům.<br "
+"/>Ve výchozím stavu je tato hodnota 0."
 
 #: applications/luci-app-frps/htdocs/luci-static/resources/view/frps.js:116
 #: applications/luci-app-frps/htdocs/luci-static/resources/view/frps.js:118

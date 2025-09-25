@@ -1,22 +1,22 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-02-03 17:25+0000\n"
-"Last-Translator: Semih <semihbrn10@gmail.com>\n"
+"PO-Revision-Date: 2025-09-08 17:09+0000\n"
+"Last-Translator: Derman <mole.qnap@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsadblock/tr/>\n"
 "Language: tr\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:302
 msgid "-- default --"
-msgstr ""
+msgstr "--varsayılan--"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/feeds.js:220
 msgid "0.0.0.0<SPACE><DOMAIN>"
-msgstr ""
+msgstr "0.0.0.0<SPACE><DOMAIN>"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/feeds.js:219
 msgid "127.0.0.1<SPACE><DOMAIN>"
@@ -151,7 +151,7 @@ msgstr ""
 msgid "Blocklist Query"
 msgstr "Engelleme Listesi Sorgusu"
 
-#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:415
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:411
 msgid "Blocklist Query..."
 msgstr "Engelleme Listesi Sorgusu..."
 
@@ -444,10 +444,6 @@ msgstr "Genel Ayarlar"
 msgid "GeoIP Map"
 msgstr ""
 
-#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:394
-msgid "GeoIP Map is not enabled!"
-msgstr ""
-
 #: applications/luci-app-adblock/root/usr/share/rpcd/acl.d/luci-app-adblock.json:3
 msgid "Grant access to LuCI app adblock"
 msgstr "LuCI uygulaması adblock'a izin verin"
@@ -538,7 +534,7 @@ msgstr "Günlük Kayıtlarını Göster"
 msgid "Map Reset"
 msgstr ""
 
-#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:408
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:404
 msgid "Map..."
 msgstr ""
 
@@ -550,7 +546,7 @@ msgstr ""
 msgid "Nice Level"
 msgstr ""
 
-#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:404
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:400
 msgid "No GeoIP Map data!"
 msgstr ""
 
@@ -609,7 +605,7 @@ msgstr "Yenile"
 msgid "Refresh DNS Report"
 msgstr "DNS Raporunu Yenile"
 
-#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:422
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:418
 msgid "Refresh..."
 msgstr "Yenile.."
 
@@ -929,3 +925,12 @@ msgstr ""
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:336
 msgid "unbound"
 msgstr ""
+
+#~ msgid "Base Temp Directory"
+#~ msgstr "Temel Geçici Dizin"
+
+#~ msgid "Low Priority Service"
+#~ msgstr "Düşük Öncelikli Servis"
+
+#~ msgid "Run Utils"
+#~ msgstr "Araçları Çalıştır"
