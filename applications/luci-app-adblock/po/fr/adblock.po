@@ -930,12 +930,3 @@ msgstr ""
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:336
 msgid "unbound"
 msgstr ""
-
-#~ msgid "Base Temp Directory"
-#~ msgstr "Répertoire Temporaire"
-
-#~ msgid "Low Priority Service"
-#~ msgstr "Service en priorité basse"
-
-#~ msgid "Run Utils"
-#~ msgstr "Outils de travail"

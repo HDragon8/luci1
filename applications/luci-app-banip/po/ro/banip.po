@@ -1332,6 +1332,3 @@ msgstr ""
 #: applications/luci-app-banip/htdocs/luci-static/resources/view/banip/overview.js:592
 msgid "warn"
 msgstr "atenție"
-
-#~ msgid "Elements"
-#~ msgstr "Elemente"

@@ -78,7 +78,8 @@ msgid ""
 "BindUdpPort specifies the UDP port that the server listens on. If this value "
 "is 0, the server will not listen for UDP connections.<br />By default, this "
 "value is 0"
-msgstr "BindUdpPort指定伺服器監聽的UDP連接埠。如果此值為0，伺服器將不會監聽UDP連線。 "
+msgstr ""
+"BindUdpPort指定伺服器監聽的UDP連接埠。如果此值為0，伺服器將不會監聽UDP連線。 "
 "<br />預設值為0"
 
 #: applications/luci-app-frps/htdocs/luci-static/resources/view/frps.js:143
@@ -160,8 +161,9 @@ msgstr "禁用日誌顏色"
 msgid ""
 "DisableLogColor disables log colors when LogWay == \"console\" when set to "
 "true.<br />By default, this value is false."
-msgstr "當LogWay == 「console」設定為true時，DisableLogColor會停用日誌顏色。 <br "
-"/>此值預設為false。"
+msgstr ""
+"當LogWay == 「console」設定為true時，DisableLogColor會停用日誌顏色。 <br />此"
+"值預設為false。"
 
 #: applications/luci-app-frps/htdocs/luci-static/resources/view/frps.js:14
 msgid "Environment variable"
@@ -301,8 +303,8 @@ msgid ""
 "\"test\", the resulting URL would be \"test.frps.com\".<br />By default, "
 "this value is \"\"."
 msgstr ""
-"SubDomainHost指定當使用Vhost代理時將附加到客戶端請求網域的子網域. 例如, "
-"如果將此值設定為“frps.com”, 並且客戶端請求了子域“test”, 則結果URL將為“ "
+"SubDomainHost指定當使用Vhost代理時將附加到客戶端請求網域的子網域. 例如, 如果"
+"將此值設定為“frps.com”, 並且客戶端請求了子域“test”, 則結果URL將為“ "
 "test.frps.com”. <br />預設情況下，此值為“”."
 
 #: applications/luci-app-frps/htdocs/luci-static/resources/view/frps.js:37

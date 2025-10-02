@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-09-08 17:09+0000\n"
-"Last-Translator: Derman <mole.qnap@gmail.com>\n"
+"PO-Revision-Date: 2025-02-03 17:25+0000\n"
+"Last-Translator: Semih <semihbrn10@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsadblock-fast/tr/>\n"
 "Language: tr\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: applications/luci-app-adblock-fast/htdocs/luci-static/resources/adblock-fast/status.js:99
 msgid "%s is currently disabled"
@@ -674,7 +674,7 @@ msgstr ""
 #: applications/luci-app-adblock-fast/htdocs/luci-static/resources/view/adblock-fast/overview.js:520
 #: applications/luci-app-adblock-fast/htdocs/luci-static/resources/view/status/include/70_adblock-fast.js:70
 msgid "Unknown"
-msgstr "Bilinmiyor"
+msgstr "Bilinmeyen"
 
 #: applications/luci-app-adblock-fast/htdocs/luci-static/resources/adblock-fast/status.js:397
 msgid "Unknown error"
@@ -794,50 +794,3 @@ msgstr "smartdns nft seti"
 #: applications/luci-app-adblock-fast/htdocs/luci-static/resources/view/adblock-fast/overview.js:155
 msgid "unbound adblock list"
 msgstr "unbound reklam engelleme listesi"
-
-#~ msgid "Error"
-#~ msgstr "Hata"
-
-#~ msgid "Fail"
-#~ msgstr "Başarısız"
-
-#~ msgid "Warning"
-#~ msgstr "Dikkat"
-
-#~ msgid "AdBlock on all instances"
-#~ msgstr "Tüm örneklerde AdBlock"
-
-#~ msgid "AdBlock on select instances"
-#~ msgstr "Seçili örneklerde Reklam Engelleme"
-
-#~ msgid "No AdBlock on SmartDNS"
-#~ msgstr "SmartDNS'de AdBlock yok"
-
-#~ msgid "No AdBlock on dnsmasq"
-#~ msgstr "dnsmasq'ta AdBlock yok"
-
-#~ msgid "Pick the SmartDNS instance(s) for AdBlocking"
-#~ msgstr "Reklam Engelleme için SmartDNS örnek(ler)ini seçin"
-
-#~ msgid "Pick the dnsmasq instance(s) for AdBlocking"
-#~ msgstr "AdBlocking için dnsmasq örnek(ler)ini seçin"
-
-#~ msgid "Use AdBlocking on the SmartDNS instance(s)"
-#~ msgstr "SmartDNS örneklerinde AdBlocking'i kullan"
-
-#~ msgid "Use AdBlocking on the dnsmasq instance(s)"
-#~ msgstr "Şu dnsmasq örneklerinde AdBlocking kullan"
-
-#~ msgid ""
-#~ "You can limit the AdBlocking to the specific SmartDNS instance(s) (%smore "
-#~ "information%s)."
-#~ msgstr ""
-#~ "Reklam Engellemeyi belirli SmartDNS örnekleriyle (%sdaha fazla bilgi%s) "
-#~ "sınırlandırabilirsiniz."
-
-#~ msgid ""
-#~ "You can limit the AdBlocking to the specific dnsmasq instance(s) (%smore "
-#~ "information%s)."
-#~ msgstr ""
-#~ "Reklam Engellemeyi belirli dnsmasq örnekleriyle (%sdaha fazla bilgi%s) "
-#~ "sınırlandırabilirsiniz."

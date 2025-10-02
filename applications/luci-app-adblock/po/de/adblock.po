@@ -977,15 +977,3 @@ msgstr "smartdns"
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:336
 msgid "unbound"
 msgstr "unbound"
-
-#~ msgid "GeoIP Map is not enabled!"
-#~ msgstr "GeoIP-Karte ist nicht aktiviert!"
-
-#~ msgid "Base Temp Directory"
-#~ msgstr "Basis-Temp-Verzeichnis"
-
-#~ msgid "Low Priority Service"
-#~ msgstr "Dienst mit niedriger Priorität"
-
-#~ msgid "Run Utils"
-#~ msgstr "Run-Werkzeuge"

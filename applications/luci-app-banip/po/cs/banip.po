@@ -1374,12 +1374,3 @@ msgstr "sshd nezdařené přihlášení"
 #: applications/luci-app-banip/htdocs/luci-static/resources/view/banip/overview.js:592
 msgid "warn"
 msgstr "varov."
-
-#~ msgid "Elements"
-#~ msgstr "Prvky"
-
-#~ msgid "GeoIP Map is not enabled!"
-#~ msgstr "GeoIP mapa není zapnutá!"
-
-#~ msgid "Unable to parse the report file!"
-#~ msgstr "Nepodařilo se zpracovat soubor s hlášením!"

@@ -68,7 +68,7 @@ function render_status(node, ifc, with_device) {
 	desc = desc ? '%s (%s)'.format(desc, ifc.getI18n()) : ifc.getI18n();
 
 	const changecount = with_device ? 0 : count_changes(ifc.getName());
-	const maindev = ifc.getL3Device() ?? ifc.getDevice();
+	const maindev = ifc.getL3Device() || ifc.getDevice();
 	const macaddr = maindev ? maindev.getMAC() : null;
 	const cond00 = !changecount && !ifc.isDynamic() && !ifc.isAlias();
 	const cond01 = cond00 && macaddr;
@@ -99,8 +99,7 @@ function render_status(node, ifc, with_device) {
 }
 
 function render_modal_status(node, ifc) {
-	// order is important: ifc.getL3Device() can determine dev.getType for tunnel configs
-	const dev = ifc ? (ifc.getL3Device() ?? ifc.getDevice()) : null;
+	var dev = ifc ? (ifc.getDevice() || ifc.getL3Device() || ifc.getL3Device()) : null;
 
 	dom.content(node, [
 		E('img', {
@@ -295,7 +294,7 @@ return view.extend({
 			}
 
 			if (stat) {
-				const dev = ifc.getL3Device() ?? ifc.getDevice();
+				var dev = ifc.getDevice();
 				dom.content(stat, [
 					E('img', {
 						'src': L.resource('icons/%s%s.svg').format(dev ? dev.getType() : 'ethernet', ifc.isUp() ? '' : '_disabled'),
@@ -516,8 +515,12 @@ return view.extend({
 		};
 
 		s.addModalOptions = function(s) {
-			var protoval = uci.get('network', s.section, 'proto') || 'none',
+			var protoval = uci.get('network', s.section, 'proto'),
+			    protoclass = protoval ? network.getProtocol(protoval) : null,
 			    o, proto_select, proto_switch, type, stp, igmp, ss, so;
+
+			if (!protoval)
+				return;
 
 			return network.getNetwork(s.section).then(L.bind(function(ifc) {
 				var protocols = network.getProtocols();
@@ -541,7 +544,6 @@ return view.extend({
 
 				proto_select = s.taboption('general', form.ListValue, 'proto', _('Protocol'));
 				proto_select.modalonly = true;
-				proto_select.default = 'none';
 
 				proto_switch = s.taboption('general', form.Button, '_switch_proto');
 				proto_switch.modalonly  = true;
@@ -610,7 +612,7 @@ return view.extend({
 				for (var i = 0; i < protocols.length; i++) {
 					proto_select.value(protocols[i].getProtocol(), protocols[i].getI18n());
 
-					if (protocols[i].getProtocol() != protoval)
+					if (protocols[i].getProtocol() != uci.get('network', s.section, 'proto'))
 						proto_switch.depends('proto', protocols[i].getProtocol());
 				}
 
@@ -659,7 +661,7 @@ return view.extend({
 					ss.taboption('general', form.Flag, 'ignore', _('Ignore interface'), _('Disable <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> for this interface.'));
 
 					if (protoval == 'static') {
-						so = ss.taboption('general', form.Value, 'start', _('Start', 'DHCP IP range start address'), _('Lowest leased address as offset from the network address.'));
+						so = ss.taboption('general', form.Value, 'start', _('Start'), _('Lowest leased address as offset from the network address.'));
 						so.optional = true;
 						so.datatype = 'or(uinteger,ip4addr("nomask"))';
 						so.default = '100';
@@ -928,23 +930,9 @@ return view.extend({
 					so.datatype = 'range(1,62)';
 					so.depends('dhcpv6', 'server');
 
-					so = ss.taboption('ipv6', form.DynamicList, 'dns', _('Announce IPv6 DNS servers'),
+					so = ss.taboption('ipv6', form.DynamicList, 'dns', _('Announced IPv6 DNS servers'),
 						_('Specifies a fixed list of IPv6 DNS server addresses to announce via DHCPv6. If left unspecified, the device will announce itself as IPv6 DNS server unless the <em>Local IPv6 DNS server</em> option is disabled.'));
 					so.datatype = 'ip6addr("nomask")'; /* restrict to IPv6 only for now since dnsmasq (DHCPv4) does not honour this option */
-					so.depends('ra', 'server');
-					so.depends({ ra: 'hybrid', master: '0' });
-					so.depends('dhcpv6', 'server');
-					so.depends({ dhcpv6: 'hybrid', master: '0' });
-
-					so = ss.taboption('ipv6', form.DynamicList, 'dnr', _('Announce encrypted DNS servers'),
-						_('Specifies a fixed list of encrypted DNS server addresses to announce via DHCPv6/<abbr title="Router Advertisement">RA</abbr> (see %s).')
-						 .format('<a href="%s" target="_blank">RFC9463</a>').format('https://www.rfc-editor.org/rfc/rfc9463') + '<br/>' +
-						_('IPv4 addresses are only supported if <code>odhcpd</code> also handles DHCPv4.') + '<br/>' +
-						_('Syntax: <code>&lt;numeric priority&gt; &lt;domain-name&gt; [IP,...] [SVC parameter ...]</code>') + '<br/>' +
-						_('Example: <code>100 dns.example.com 2001:db8::53,192.168.1.53 alpn=doq port=853</code>') + '<br/>' +
-						_('Note: the <code>_lifetime=&lt;seconds&gt;</code> SVC parameter sets the lifetime of the announced server (use <code>0</code> to indicate a server which should no longer be used).')
-					);
-					so.datatype = 'string';
 					so.depends('ra', 'server');
 					so.depends({ ra: 'hybrid', master: '0' });
 					so.depends('dhcpv6', 'server');
@@ -958,7 +946,7 @@ return view.extend({
 					so.depends({ dhcpv6: 'server', dns: /^$/ });
 					so.depends({ dhcpv6: 'hybrid', dns: /^$/, master: '0' });
 
-					so = ss.taboption('ipv6', form.DynamicList, 'domain', _('Announce DNS domains'),
+					so = ss.taboption('ipv6', form.DynamicList, 'domain', _('Announced DNS domains'),
 						_('Specifies a fixed list of DNS search domains to announce via DHCPv6. If left unspecified, the local device DNS search domain will be announced.'));
 					so.datatype = 'hostname';
 					so.depends('ra', 'server');

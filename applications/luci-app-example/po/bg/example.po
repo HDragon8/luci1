@@ -20,19 +20,19 @@ msgstr "Булева опция"
 msgid "A select option"
 msgstr "Избрана опция"
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:55
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:56
 msgid "Cats"
 msgstr "Котки"
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:72
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:73
 msgid "Description for this table section"
 msgstr "Описание на тази таблична секция"
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:72
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:73
 msgid "Description for this typed section"
 msgstr "Описание на тази топива секция"
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:56
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:57
 msgid "Dogs"
 msgstr "Кучета"
 
@@ -84,41 +84,41 @@ msgstr ""
 msgid "Input for the first option"
 msgstr ""
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:59
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:60
 msgid "Is this real?"
 msgstr ""
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:127
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:130
 msgid "JSON converted to table via array building and loop"
 msgstr ""
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:59
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:60
 msgid "JSONMap TableSection Sample"
 msgstr ""
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:59
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:60
 msgid "JSONMap TypedSection Sample"
 msgstr ""
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:59
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:60
 msgid "No"
 msgstr ""
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:86
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:87
 msgid "Not found"
-msgstr ""
-
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:73
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:73
-msgid "Option name"
 msgstr ""
 
 #: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:74
 #: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:74
+msgid "Option name"
+msgstr ""
+
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:75
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:75
 msgid "Option value"
 msgstr ""
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:57
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:58
 msgid "Parakeets"
 msgstr ""
 
@@ -138,19 +138,19 @@ msgstr ""
 msgid "RPC JSONMap Typed Example"
 msgstr ""
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:35
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:35
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:34
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:36
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:36
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:35
 msgid "RPC call failure:"
 msgstr ""
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:125
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:128
 msgid "Sample JS via RPC"
 msgstr ""
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:60
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:60
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:112
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:61
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:61
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:115
 msgid "See browser console for raw data"
 msgstr ""
 
@@ -158,11 +158,11 @@ msgstr ""
 msgid "Select Option"
 msgstr ""
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:58
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:59
 msgid "Should be \"Not found\""
 msgstr ""
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:59
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:60
 msgid "Yes"
 msgstr ""
 

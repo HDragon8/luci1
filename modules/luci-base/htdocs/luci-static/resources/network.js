@@ -1656,7 +1656,7 @@ Network = baseclass.extend(/** @lends LuCI.network.prototype */ {
 		if (name == null)
 			return null;
 
-		proto = (proto == null ? (uci.get('network', name, 'proto') || 'none') : proto);
+		proto = (proto == null ? uci.get('network', name, 'proto') : proto);
 
 		var protoClass = _protocols[proto] || Protocol;
 		return new protoClass(name);
@@ -3108,7 +3108,7 @@ Device = baseclass.extend(/** @lends LuCI.network.Device.prototype */ {
 	 * Checks whether this device is up.
 	 *
 	 * @returns {boolean}
-	 * Returns `true` when the associated device is running or `false`
+	 * Returns `true` when the associated device is running pr `false`
 	 * when it is down or absent.
 	 */
 	isUp: function() {

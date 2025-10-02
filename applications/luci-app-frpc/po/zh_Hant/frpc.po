@@ -162,8 +162,8 @@ msgid ""
 "before the connection is terminated, in seconds. It is not recommended to "
 "change this value.<br />By default, this value is 90."
 msgstr ""
-"HeartBeatTimeout指定終止連線之前允許的最大心跳回應延遲, 以秒為單位. "
-"不建議更改此值. <br />預設情況下, 此值為90."
+"HeartBeatTimeout指定終止連線之前允許的最大心跳回應延遲, 以秒為單位. 不建議更"
+"改此值. <br />預設情況下, 此值為90."
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:38
 msgid "Heartbeat interval"
@@ -373,7 +373,8 @@ msgstr "伺服器連接埠"
 msgid ""
 "ServerAddr specifies the address of the server to connect to.<br />By "
 "default, this value is \"127.0.0.1\"."
-msgstr "ServerAddr指定要連線的伺服器的位址。<br />預設情況下，此值為“ 127.0.0.1”。"
+msgstr ""
+"ServerAddr指定要連線的伺服器的位址。<br />預設情況下，此值為“ 127.0.0.1”。"
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:21
 msgid ""

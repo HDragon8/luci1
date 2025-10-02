@@ -545,9 +545,9 @@ msgstr ""
 "Algoritmus kvality linky (pouze pro lq stupně 2).<br /><b>etx_float</b>: "
 "desetinné ETX s exponenciálním stárnutím<br /><b>etx_fpm</b> : stejné jako "
 "etx_float, ale s celočíselnou aritmetikou<br /><b>etx_ff</b> : ETX freifunk, "
-"varianta etx která používá veškerý OLSR provoz (namísto pouze hello pozdravy)"
-" pro výpočet ETX<br /><b>etx_ffeth</b>: nekompatibilní varianta etx_ff, "
-"která umožňuje ethernetové linky s ETX 0.1.<br />Výchozí je „etx_ff“"
+"varianta etx která používá veškerý OLSR provoz (namísto pouze hello "
+"pozdravy) pro výpočet ETX<br /><b>etx_ffeth</b>: nekompatibilní varianta "
+"etx_ff, která umožňuje ethernetové linky s ETX 0.1.<br />Výchozí je „etx_ff“"
 
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:172
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd6.js:166

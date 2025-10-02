@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: LuCI: olsr\n"
 "POT-Creation-Date: 2013-09-06 09:58+0200\n"
 "PO-Revision-Date: 2025-08-05 15:25+0000\n"
-"Last-Translator: SnIPeRSnIPeR <snipersniper@users.noreply.hosted.weblate.org>"
-"\n"
+"Last-Translator: SnIPeRSnIPeR "
+"<snipersniper@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsolsr/ru/>\n"
 "Language: ru\n"
@@ -323,8 +323,8 @@ msgstr "IPv4"
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrdiface.js:121
 msgid "IPv4 broadcast"
 msgstr ""
-"Широковещательный <abbr title=\"Internet Protocol Version 4\""
-">IPv4</abbr>-адрес"
+"Широковещательный <abbr title=\"Internet Protocol Version 4\">IPv4</abbr>-"
+"адрес"
 
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:356
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrdiface.js:122
@@ -555,9 +555,9 @@ msgstr ""
 "Алгоритм LQ (только для уровня LQ, равного 2).<br /><b>etx_float</b>: ETX с "
 "плавающей точкой и экспоненциальным старением.<br /><b>etx_fpm</b> : тоже "
 "что и etx_float, но с целочисленной арифметикой.<br /><b>etx_ff</b> : ETX "
-"freifunk, использует весь трафик OLSR для расчёта ETX.<br /><b>etx_ffeth</b>:"
-" несовместимый вариант etx_ff, разрешающий Ethernet-соединения с ETX 0.1.<br "
-"/>По умолчанию 'etx_ff'"
+"freifunk, использует весь трафик OLSR для расчёта ETX.<br /><b>etx_ffeth</"
+"b>: несовместимый вариант etx_ff, разрешающий Ethernet-соединения с ETX 0.1."
+"<br />По умолчанию 'etx_ff'"
 
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:172
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd6.js:166

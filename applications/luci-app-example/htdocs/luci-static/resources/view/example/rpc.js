@@ -9,7 +9,8 @@ listed by the shell command
 
 $ ubus list
 
-Custom ucode scripts can be placed in /usr/share/rpcd/ucode, and must emit JSON.
+Custom scripts can be placed in /usr/libexec/rpcd, and must emit JSON. The name of the file
+in that directory will be the value for the object key in the declared map.
 
 Permissions to make these calls must be granted in /usr/share/rpcd/acl.d
 via a file named the same as the application package name (luci-app-example)
@@ -103,7 +104,9 @@ return view.extend({
 	// return is used to modify the DOM that the browser shows.
 	render: function (data) {
 		// data[0] will be the result from load_sample1
-		const sample1 = data[0] || {};
+		var sample1 = data[0] || {};
+		// data[1] will be the result from load_sample_yaml
+		var sample_yaml = data[1] || {};
 
 		// Render the tables as individual sections.
 		return E('div', {}, [

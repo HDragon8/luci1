@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-09-08 07:50+0000\n"
+"PO-Revision-Date: 2025-08-11 21:03+0000\n"
 "Last-Translator: Максим Горпиніч <gorpinicmaksim0@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsadblock-fast/uk/>\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #: applications/luci-app-adblock-fast/htdocs/luci-static/resources/adblock-fast/status.js:99
 msgid "%s is currently disabled"
@@ -447,7 +447,7 @@ msgstr "Відсутній рекомендований пакет: \"%s\""
 
 #: applications/luci-app-adblock-fast/htdocs/luci-static/resources/view/adblock-fast/overview.js:524
 msgid "Name"
-msgstr "Ім'я"
+msgstr "Назва"
 
 #: applications/luci-app-adblock-fast/htdocs/luci-static/resources/view/adblock-fast/overview.js:515
 msgid "Name/URL"
@@ -728,11 +728,11 @@ msgstr "Версія %s"
 
 #: applications/luci-app-adblock-fast/htdocs/luci-static/resources/adblock-fast/status.js:67
 msgid "Waiting for trigger (on_boot)"
-msgstr "Очікування тригера (on_boot)"
+msgstr ""
 
 #: applications/luci-app-adblock-fast/htdocs/luci-static/resources/adblock-fast/status.js:68
 msgid "Waiting for trigger (on_start)"
-msgstr "Очікування тригера (on_start)"
+msgstr ""
 
 #: applications/luci-app-adblock-fast/htdocs/luci-static/resources/view/adblock-fast/overview.js:244
 msgid ""
@@ -788,7 +788,7 @@ msgstr "Не вдалося відновити файл резервної ко�
 
 #: applications/luci-app-adblock-fast/htdocs/luci-static/resources/view/adblock-fast/overview.js:334
 msgid "none"
-msgstr "жодного"
+msgstr "нічого"
 
 #: applications/luci-app-adblock-fast/htdocs/luci-static/resources/view/adblock-fast/overview.js:146
 msgid "smartdns domain set"
@@ -805,50 +805,3 @@ msgstr "Набір smartdns nft"
 #: applications/luci-app-adblock-fast/htdocs/luci-static/resources/view/adblock-fast/overview.js:155
 msgid "unbound adblock list"
 msgstr "неприв'язаний список adblock"
-
-#~ msgid "Error"
-#~ msgstr "Помилка"
-
-#~ msgid "Fail"
-#~ msgstr "Невдача"
-
-#~ msgid "Warning"
-#~ msgstr "'Попередження"
-
-#~ msgid "AdBlock on all instances"
-#~ msgstr "Блокувальник реклами на всіх екземплярах"
-
-#~ msgid "AdBlock on select instances"
-#~ msgstr "Блокувальник реклами у вибраних екземплярах"
-
-#~ msgid "No AdBlock on SmartDNS"
-#~ msgstr "Не використовувати AdBlock на SmartDNS"
-
-#~ msgid "No AdBlock on dnsmasq"
-#~ msgstr "Не використовувати AdBlock на dnsmasq"
-
-#~ msgid "Pick the SmartDNS instance(s) for AdBlocking"
-#~ msgstr "Виберіть екземпляр(и) SmartDNS для блокування реклами"
-
-#~ msgid "Pick the dnsmasq instance(s) for AdBlocking"
-#~ msgstr "Виберіть екземпляр(и) dnsmasq для блокування AdBlocking"
-
-#~ msgid "Use AdBlocking on the SmartDNS instance(s)"
-#~ msgstr "Використовуйте AdBlocking на екземплярі(ах) SmartDNS"
-
-#~ msgid "Use AdBlocking on the dnsmasq instance(s)"
-#~ msgstr "Використовуйте AdBlocking на екземплярі(ах) dnsmasq"
-
-#~ msgid ""
-#~ "You can limit the AdBlocking to the specific SmartDNS instance(s) (%smore "
-#~ "information%s)."
-#~ msgstr ""
-#~ "Ви можете обмежити блокування реклами для певного(их) екземпляра(ів) "
-#~ "SmartDNS (%smore information%s)."
-
-#~ msgid ""
-#~ "You can limit the AdBlocking to the specific dnsmasq instance(s) (%smore "
-#~ "information%s)."
-#~ msgstr ""
-#~ "Ви можете обмежити блокування AdBlocking до певного(их) екземпляра(ів) "
-#~ "dnsmasq (%smore information%s)."

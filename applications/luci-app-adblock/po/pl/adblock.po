@@ -975,29 +975,3 @@ msgstr "smartdns"
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:336
 msgid "unbound"
 msgstr "unbound"
-
-#~ msgid "GeoIP Map is not enabled!"
-#~ msgstr "Mapa GeoIP nie jest włączona!"
-
-#~ msgid "Base Temp Directory"
-#~ msgstr "Podstawowy katalog tymczasowy"
-
-#~ msgid ""
-#~ "Base temp directory for all adblock related runtime operations, e.g. "
-#~ "downloading, sorting, merging etc."
-#~ msgstr ""
-#~ "Podstawowy katalog tymczasowy dla wszystkich operacji związanych z "
-#~ "blokowaniem reklam, np. pobierania, sortowania, scalania itp."
-
-#~ msgid "Low Priority Service"
-#~ msgstr "Usługa niskopriorytetowa"
-
-#~ msgid ""
-#~ "Reduce the priority of the adblock background processing to take fewer "
-#~ "resources from the system."
-#~ msgstr ""
-#~ "Zmniejsz priorytet przetwarzania w tle przez usługę blokowania reklam, "
-#~ "aby zmniejszyć jej zapotrzebowanie na zasoby systemowe."
-
-#~ msgid "Run Utils"
-#~ msgstr "Uruchomione narzędzia"

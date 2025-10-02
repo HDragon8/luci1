@@ -971,29 +971,3 @@ msgstr "smartdns"
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:336
 msgid "unbound"
 msgstr "без зв'язку"
-
-#~ msgid "GeoIP Map is not enabled!"
-#~ msgstr "Карта GeoIP не ввімкнена!"
-
-#~ msgid "Base Temp Directory"
-#~ msgstr "Розташування тимчасових файлів"
-
-#~ msgid ""
-#~ "Base temp directory for all adblock related runtime operations, e.g. "
-#~ "downloading, sorting, merging etc."
-#~ msgstr ""
-#~ "Базовий тимчасовий каталог для всіх операцій виконання, пов’язаних із "
-#~ "блокуванням реклами, напр. завантаження, сортування, об'єднання тощо."
-
-#~ msgid "Low Priority Service"
-#~ msgstr "Низький пріоритет служби"
-
-#~ msgid ""
-#~ "Reduce the priority of the adblock background processing to take fewer "
-#~ "resources from the system."
-#~ msgstr ""
-#~ "Знизьте пріоритет фонової обробки рекламного блоку, щоб забирати менше "
-#~ "ресурсів у системи."
-
-#~ msgid "Run Utils"
-#~ msgstr "Робочі застосунки"

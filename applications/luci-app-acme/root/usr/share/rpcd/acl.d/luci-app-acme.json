@@ -2,10 +2,8 @@
         "luci-app-acme": {
                 "description": "Grant UCI access for luci-app-acme",
                 "read": {
-                        "cgi-io": [ "exec" ],
                         "file": {
-                                "/etc/ssl/acme": [ "list" ],
-                                "/usr/libexec/acmesh-dnsinfo.sh": [ "exec" ]
+                                "/etc/ssl/acme": [ "list" ]
                         },
                         "uci": [ "acme" ]
                 },

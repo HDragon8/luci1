@@ -1,6 +1,6 @@
 {
   "admin/services/wifischedule": {
-    "title": "WiFi Schedule",
+    "title": "wifischedule",
     "action": {
       "type": "view",
       "path": "wifischedule/wifischedule"

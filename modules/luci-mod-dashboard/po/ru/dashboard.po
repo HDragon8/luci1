@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "PO-Revision-Date: 2025-08-09 17:23+0000\n"
-"Last-Translator: SnIPeRSnIPeR <snipersniper@users.noreply.hosted.weblate.org>"
-"\n"
+"Last-Translator: SnIPeRSnIPeR "
+"<snipersniper@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/openwrt/"
 "lucimodulesluci-mod-dashboard/ru/>\n"
 "Language: ru\n"
@@ -18,7 +18,7 @@ msgstr ""
 msgid "Active"
 msgstr "Активно"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:339
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:317
 msgid "Architecture"
 msgstr "Архитектура"
 
@@ -34,8 +34,8 @@ msgstr "Скорость"
 msgid "Channel"
 msgstr "Канал"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:208
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:248
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:186
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:226
 msgid "Connected"
 msgstr "Подключено"
 
@@ -43,11 +43,11 @@ msgstr "Подключено"
 msgid "DHCP Devices"
 msgstr "Устройства DHCP"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:238
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:216
 msgid "DNSv4"
 msgstr "DNSv4"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:284
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:262
 msgid "DNSv6"
 msgstr "DNSv6"
 
@@ -75,7 +75,7 @@ msgstr "Скачать"
 msgid "Encryption"
 msgstr "Шифрование"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:344
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:322
 msgid "Firmware Version"
 msgstr "Версия встроенного ПО"
 
@@ -83,11 +83,11 @@ msgstr "Версия встроенного ПО"
 msgid "GHz"
 msgstr "ГГц"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:232
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:210
 msgid "GatewayV4"
 msgstr "GatewayV4"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:278
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:256
 msgid "GatewayV6"
 msgstr "GatewayV6"
 
@@ -117,36 +117,36 @@ msgstr "Имя хоста"
 msgid "IP Address"
 msgstr "IP-адрес"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:226
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:204
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/20_lan.js:109
 msgid "IPv4"
 msgstr "IPv4"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:205
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:183
 msgid "IPv4 Internet"
 msgstr "IPv4-Интернет"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:272
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:250
 msgid "IPv6"
 msgstr "IPv6"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:245
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:223
 msgid "IPv6 Internet"
 msgstr "IPv6-Интернет"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:266
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:244
 msgid "IPv6 prefix"
 msgstr "Префикс IPv6"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:60
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:33
 msgid "Internet"
 msgstr "Интернет"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:329
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:307
 msgid "Kernel Version"
 msgstr "Версия ядра"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:324
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:302
 msgid "Local Time"
 msgstr "Системное время"
 
@@ -162,17 +162,17 @@ msgstr "Mac"
 msgid "Mbit/s"
 msgstr "Мбит/с"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:334
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:312
 msgid "Model"
 msgstr "Модель"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:184
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:191
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:162
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:169
 msgid "Not connected"
 msgstr "Не подключён"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:220
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:260
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:198
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:238
 msgid "Protocol"
 msgstr "Протокол"
 
@@ -190,7 +190,7 @@ msgstr "Уровень сигнала"
 msgid "Strength"
 msgstr "Сила"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:60
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:33
 msgid "System"
 msgstr "Система"
 
@@ -207,9 +207,9 @@ msgstr "Загр."
 msgid "Upload"
 msgstr "Загрузить"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:214
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:254
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:319
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:192
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:232
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:297
 msgid "Uptime"
 msgstr "Время работы"
 
@@ -217,12 +217,12 @@ msgstr "Время работы"
 msgid "Wireless"
 msgstr "Беспроводная сеть"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:93
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:67
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/30_wifi.js:63
 msgid "no"
 msgstr "нет"
 
-#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:93
+#: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:67
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/30_wifi.js:63
 msgid "yes"
 msgstr "да"

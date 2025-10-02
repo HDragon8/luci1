@@ -294,9 +294,9 @@ msgid ""
 "may need to update packages or reboot the device, please check the "
 "%sREADME%s."
 msgstr ""
-"Incompatibilidade interna de versão (pacote: %s, app LuCI: %s, rpcd LuCI: %s)"
-". Pode ser necessário atualizar os pacotes ou reiniciar o dispositivo. Por "
-"favor, verifique o %sREADME%s."
+"Incompatibilidade interna de versão (pacote: %s, app LuCI: %s, rpcd LuCI: "
+"%s). Pode ser necessário atualizar os pacotes ou reiniciar o dispositivo. "
+"Por favor, verifique o %sREADME%s."
 
 #: applications/luci-app-pbr/htdocs/luci-static/resources/pbr/status.js:262
 msgid "Invalid OpenVPN config for %s interface"

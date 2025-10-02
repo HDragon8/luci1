@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2025-08-05 09:41+0000\n"
-"Last-Translator: SnIPeRSnIPeR <snipersniper@users.noreply.hosted.weblate.org>"
-"\n"
+"Last-Translator: SnIPeRSnIPeR "
+"<snipersniper@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsfrpc/ru/>\n"
 "Language: ru\n"
@@ -506,9 +506,9 @@ msgid ""
 "changed to \"{user}.{proxy_name}\".<br />By default, this value is \"\"."
 msgstr ""
 "Пользователь указывает префикс для имён прокси, чтобы отличать их от других "
-"клиентов. Если это значение не \""
-"\", имена прокси будут автоматически изменены на \"{user}.{proxy_name}"
-"\".<br />По умолчанию это значение равно \"\"."
+"клиентов. Если это значение не \"\", имена прокси будут автоматически "
+"изменены на \"{user}.{proxy_name}\".<br />По умолчанию это значение равно "
+"\"\"."
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:163
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:165

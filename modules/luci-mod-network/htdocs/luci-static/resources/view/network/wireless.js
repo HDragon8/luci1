@@ -189,26 +189,37 @@ function render_modal_status(node, radioNet) {
 
 function format_wifirate(rate) {
 	let s = `${rate.rate / 1000}\xa0${_('Mbit/s')}, ${rate.mhz}\xa0${_('MHz')}`;
+	const ht = rate.ht;
+	const vht = rate.vht;
+	const nss = rate.nss;
+	const mcs = rate.mcs;
+	const sgi = rate.short_gi;
+	const he = rate.he;
+	const he_gi = rate.he_gi;
+	const he_dcm = rate.he_dcm;
+	const eht = rate?.eht ?? false;
+	const eht_gi = rate?.eht_gi ?? 0;
+	const eht_dcm = rate?.eht_dcm ?? 0;
 
-	if (rate?.ht || rate?.vht) s += [
-		rate?.vht && `, VHT-MCS\xa0${rate?.mcs}`,
-		rate?.nss && `, VHT-NSS\xa0${rate?.nss}`,
-		rate?.ht  && `, MCS\xa0${rate?.mcs}`,
-		rate?.short_gi && ', ' + _('Short GI').replace(/ /g, '\xa0')
+	if (ht || vht) s += [
+		vht && `, VHT-MCS\xa0${mcs}`,
+		nss && `, VHT-NSS\xa0${nss}`,
+		ht  && `, MCS\xa0${mcs}`,
+		sgi && ', ' + _('Short GI').replace(/ /g, '\xa0')
 	].filter(Boolean).join('');
 
-	if (rate?.he) s += [
-		`, HE-MCS\xa0${rate?.mcs}`,
-		rate?.nss    && `, HE-NSS\xa0${rate?.nss}`,
-		rate?.he_gi  && `, HE-GI\xa0${rate?.he_gi}`,
-		rate?.he_dcm && `, HE-DCM\xa0${rate?.he_dcm}`
+	if (he) s += [
+		`, HE-MCS\xa0${mcs}`,
+		nss    && `, HE-NSS\xa0${nss}`,
+		he_gi  && `, HE-GI\xa0${he_gi}`,
+		he_dcm && `, HE-DCM\xa0${he_dcm}`
 	].filter(Boolean).join('');
 
-	if (rate?.eht) s += [
-		`, EHT-MCS\xa0${rate?.mcs}`,
-		rate?.nss    && `, EHT-NSS\xa0${rate?.nss}`,
-		rate?.eht_gi  && `, EHT-GI\xa0${rate?.eht_gi}`,
-		rate?.eht_dcm && `, EHT-DCM\xa0${rate?.eht_dcm}`
+	if (eht) s += [
+		`, EHT-MCS\xa0${mcs}`,
+		nss    && `, EHT-NSS\xa0${nss}`,
+		he_gi  && `, EHT-GI\xa0${eht_gi}`,
+		he_dcm && `, EHT-DCM\xa0${eht_dcm}`
 	].filter(Boolean).join('');
 
 	return s;
@@ -1201,8 +1212,6 @@ return view.extend({
 					o.depends('mode', 'ap');
 					o.depends('mode', 'ap-wds');
 
-					o = ss.taboption('advanced', form.Flag, 'bridge_isolate', _('Isolate Bridge Port'), _('Prevents communication only with targets on isolated bridge ports (while allowing it with targets on non-isolated ones). This also prevents client-to-client communication on the same interface when the WiFi device is in AP mode.'));
-
 					o = ss.taboption('advanced', form.Value, 'ifname', _('Interface name'), _('Override default interface name'));
 					o.optional = true;
 					o.datatype = 'netdevname';
@@ -1547,9 +1556,6 @@ return view.extend({
 				o = ss.taboption('encryption', form.Flag, 'vlan_naming', _('RADIUS VLAN Naming'), _('Off: <code>vlanXXX</code>, e.g., <code>vlan1</code>. On: <code>vlan_tagged_interface.XXX</code>, e.g. <code>eth0.1</code>.'));
 				add_dependency_permutations(o, { mode: ['ap', 'ap-wds'], encryption: ['wpa', 'wpa2', 'wpa3', 'wpa3-mixed', 'wpa3-192'] });
 				add_dependency_permutations(o, { mode: ['ap', 'ap-wds'], encryption: ['psk', 'psk2', 'psk+psk2', 'psk-mixed'], ppsk: ['1'] });
-				o.enabled = '1';
-				o.disabled = '0';
-				o.default = o.enabled;
 
 				o = ss.taboption('encryption', widgets.DeviceSelect, 'vlan_tagged_interface', _('RADIUS VLAN Tagged Interface'), _('E.g. eth0, eth1'));
 				add_dependency_permutations(o, { mode: ['ap', 'ap-wds'], encryption: ['wpa', 'wpa2', 'wpa3', 'wpa3-mixed', 'wpa3-192'] });

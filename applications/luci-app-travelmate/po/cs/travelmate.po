@@ -429,8 +429,8 @@ msgstr ""
 "upravovat, odebírat nebo upřednostňovat jejich přetahováním a skenováním "
 "ohledně nových.<br /> Nyní využívané uplink spojení je zvýrazněno <span "
 "style=\"color:rgb(51, 119, 204);font-weight:bold\">modře</span>, šifrované "
-"VPN uplink spojení je zvýrazněno <span style="
-"\"color:rgb(68, 170, 68);font-weight:bold\">zeleně</span>."
+"VPN uplink spojení je zvýrazněno <span style=\"color:rgb(68, 170, 68);font-"
+"weight:bold\">zeleně</span>."
 
 #: applications/luci-app-travelmate/htdocs/luci-static/resources/view/travelmate/stations.js:421
 #: applications/luci-app-travelmate/htdocs/luci-static/resources/view/travelmate/stations.js:979

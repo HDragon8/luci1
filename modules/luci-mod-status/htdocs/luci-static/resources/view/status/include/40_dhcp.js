@@ -122,9 +122,8 @@ return baseclass.extend({
 				rows.push(E('button', {
 					'class': 'cbi-button cbi-button-apply',
 					'click': L.bind(this.handleCreateStaticLease, this, lease),
-					'data-tooltip': _('Reserve a specific IP address for this device'),
 					'disabled': this.isMACStatic[mac]
-				}, [ _('Reserve IP') ]));
+				}, [ _('Set Static') ]));
 			}
 
 			return rows;
@@ -135,7 +134,6 @@ return baseclass.extend({
 				E('th', { 'class': 'th' }, _('Host')),
 				E('th', { 'class': 'th' }, _('IPv6 address')),
 				E('th', { 'class': 'th' }, _('DUID')),
-				E('th', { 'class': 'th' }, _('IAID')),
 				E('th', { 'class': 'th' }, _('Lease time remaining')),
 				isReadonlyView ? E([]) : E('th', { 'class': 'th cbi-section-actions' }, _('Static Lease'))
 			])
@@ -165,7 +163,6 @@ return baseclass.extend({
 				host || '-',
 				lease.ip6addrs ? lease.ip6addrs.join('<br />') : lease.ip6addr,
 				lease.duid,
-				lease.iaid,
 				exp
 			];
 
@@ -174,9 +171,8 @@ return baseclass.extend({
 				rows.push(E('button', {
 					'class': 'cbi-button cbi-button-apply',
 					'click': L.bind(this.handleCreateStaticLease6, this, lease),
-					'data-tooltip': _('Reserve a specific IP address for this device'),
 					'disabled': this.isDUIDStatic[duid]
-				}, [ _('Reserve IP') ]));
+				}, [ _('Set Static') ]));
 			}
 
 			return rows;

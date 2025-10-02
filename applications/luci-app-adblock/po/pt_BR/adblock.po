@@ -984,30 +984,3 @@ msgstr "DNS Inteligente"
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:336
 msgid "unbound"
 msgstr "desvincular"
-
-#~ msgid "GeoIP Map is not enabled!"
-#~ msgstr "O Mapa GeoIP não está ativado!"
-
-#~ msgid "Base Temp Directory"
-#~ msgstr "Diretório Base Temporário"
-
-#~ msgid ""
-#~ "Base temp directory for all adblock related runtime operations, e.g. "
-#~ "downloading, sorting, merging etc."
-#~ msgstr ""
-#~ "Diretório temporário base para todas as operações em tempo de execução "
-#~ "relacionadas ao bloqueador de anúncios, por exemplo, download, ordenação, "
-#~ "mesclagem, etc."
-
-#~ msgid "Low Priority Service"
-#~ msgstr "Serviço de Baixa Prioridade"
-
-#~ msgid ""
-#~ "Reduce the priority of the adblock background processing to take fewer "
-#~ "resources from the system."
-#~ msgstr ""
-#~ "Reduzir a prioridade do processamento em segundo plano do bloqueador de "
-#~ "anúncios para consumir menos recursos do sistema."
-
-#~ msgid "Run Utils"
-#~ msgstr "Executar Utilitários"

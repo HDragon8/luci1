@@ -355,7 +355,6 @@ struct lease_entry {
 	struct ether_addr mac;
 	char *hostname;
 	char *duid;
-	char *iaid;
 	union {
 		struct in_addr in;
 		struct in6_addr in6;
@@ -488,14 +487,16 @@ lease_next(void)
 				strtok(NULL, " \t\n"); /* iface */
 
 				e.duid = strtok(NULL, " \t\n"); /* duid */
+
 				if (!e.duid)
 					continue;
 
-				e.iaid = strtok(NULL, " \t\n"); /* iaid */
-				if (!e.iaid)
+				p = strtok(NULL, " \t\n"); /* iaid */
+
+				if (!p)
 					continue;
 
-				if (!strcmp(e.iaid, "ipv4")) {
+				if (!strcmp(p, "ipv4")) {
 					e.af = AF_INET;
 					e.mask = 32;
 				}
@@ -596,7 +597,6 @@ lease_next(void)
 
 				e.hostname = strtok(NULL, " \t\n");
 				e.duid     = strtok(NULL, " \t\n");
-				e.iaid     = NULL;
 
 				if (!e.hostname || !e.duid)
 					continue;
@@ -1963,9 +1963,6 @@ rpc_luci_get_dhcp_leases(struct ubus_context *ctx, struct ubus_object *obj,
 
 			if (lease->duid)
 				blobmsg_add_string(&blob, "duid", lease->duid);
-
-			if (lease->iaid)
-				blobmsg_add_string(&blob, "iaid", lease->iaid);
 
 			inet_ntop(lease->af, &lease->addr[0].in6, s, sizeof(s));
 			blobmsg_add_string(&blob, (af == AF_INET) ? "ipaddr" : "ip6addr", s);

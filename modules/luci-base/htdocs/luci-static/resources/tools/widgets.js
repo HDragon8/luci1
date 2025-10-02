@@ -18,12 +18,12 @@ function getGroups() {
 }
 
 function getDevices(network) {
-	if (network.isBridge()) {
-		var devices = network.getDevices();
-		return devices ? devices : [];
-	} else {
-		return L.toArray(network.getL3Device());
-	}
+    if (network.isBridge()) {
+        var devices = network.getDevices();
+        return devices ? devices : [];
+    } else {
+        return L.toArray(network.getDevice());
+    }
 }
 
 var CBIZoneSelect = form.ListValue.extend({
@@ -119,7 +119,7 @@ var CBIZoneSelect = form.ListValue.extend({
 				for (var k = 0; k < devices.length; k++) {
 					span.appendChild(E('img', {
 						'title': devices[k].getI18n(),
-						'src': L.resource('icons/%s%s.svg'.format(devices[k].getType(), devices[k].isUp() ? '' : '_disabled'))
+						'src': L.resource('icons/%s%s.svg'.format(devices[k].getType(), network.isUp() ? '' : '_disabled'))
 					}));
 				}
 
@@ -148,9 +148,6 @@ var CBIZoneSelect = form.ListValue.extend({
 			display_items: this.display_size || this.size || 3,
 			dropdown_items: this.dropdown_size || this.size || 5,
 			validate: L.bind(this.validate, this, section_id),
-			datatype: L.hasSystemFeature('firewall4')
-				? ( this.multiple ? 'list(or(uciname,"*"))' : 'or(uciname,"*")' )
-				: this.multiple ? 'list(or(and(uciname,maxlength(11)),"*"))' : 'or(and(uciname,maxlength(11)),"*")',
 			create: !this.nocreate,
 			create_markup: '' +
 				'<li data-value="{{value}}">' +
@@ -264,7 +261,7 @@ var CBIZoneForwards = form.DummyValue.extend({
 			for (var k = 0; k < subdevs.length && subdevs[k]; k++) {
 				span.appendChild(E('img', {
 					'title': subdevs[k].getI18n(),
-					'src': L.resource('icons/%s%s.svg'.format(subdevs[k].getType(), subdevs[k].isUp() ? '' : '_disabled'))
+					'src': L.resource('icons/%s%s.svg'.format(subdevs[k].getType(), network.isUp() ? '' : '_disabled'))
 				}));
 			}
 
@@ -360,7 +357,7 @@ var CBINetworkSelect = form.ListValue.extend({
 		for (var j = 0; j < devices.length && devices[j]; j++) {
 			span.appendChild(E('img', {
 				'title': devices[j].getI18n(),
-				'src': L.resource('icons/%s%s.svg'.format(devices[j].getType(), devices[j].isUp() ? '' : '_disabled'))
+				'src': L.resource('icons/%s%s.svg'.format(devices[j].getType(), network.isUp() ? '' : '_disabled'))
 			}));
 		}
 

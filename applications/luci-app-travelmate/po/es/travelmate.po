@@ -435,10 +435,10 @@ msgstr ""
 "Vista general de todos los enlaces ascendentes configurados para Travelmate. "
 "Puede editar, eliminar o priorizar los enlaces ascendentes existentes "
 "arrastrando y soltando y escaneando los nuevos. <br />La conexión de enlace "
-"ascendente utilizada actualmente se enfatiza en <span style="
-"\"color:rgb(51, 119, 204);font-weight:bold\">azul</span>, una conexión de "
-"enlace ascendente VPN cifrada se enfatiza en <span style="
-"\"color:rgb(68, 170, 68);font-weight:bold\">verde</span>."
+"ascendente utilizada actualmente se enfatiza en <span style=\"color:rgb(51, "
+"119, 204);font-weight:bold\">azul</span>, una conexión de enlace ascendente "
+"VPN cifrada se enfatiza en <span style=\"color:rgb(68, 170, 68);font-"
+"weight:bold\">verde</span>."
 
 #: applications/luci-app-travelmate/htdocs/luci-static/resources/view/travelmate/stations.js:421
 #: applications/luci-app-travelmate/htdocs/luci-static/resources/view/travelmate/stations.js:979

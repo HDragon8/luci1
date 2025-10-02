@@ -8,12 +8,12 @@ return view.extend({
 	logFacilityFilter: 'any',
 	invertLogFacilitySearch: false,
 	logSeverityFilter: 'any',
-	invertLogSeveritySearch: false,
+	invertLogseveritySearch: false,
 	logTextFilter: '',
 	invertLogTextSearch: false,
 
 	facilities: [
-		['any', 'any', _('Any')],
+		['any', '', _('Any')],
 		['0',  'kern',   _('Kernel')],
 		['1',  'user',   _('User')],
 		['2',  'mail',   _('Mail')],
@@ -41,7 +41,7 @@ return view.extend({
 	],
 
 	severity: [
-		['any','any', _('Any')],
+		['any', '', _('Any')],
 		['0',  'emerg',   _('Emergency')],
 		['1',  'alert',   _('Alert')],
 		['2',  'crit',   _('Critical')],
@@ -54,6 +54,7 @@ return view.extend({
 
 
 	retrieveLog: async function() {
+		const facility = this.logFacilityFilter;
 
 		return Promise.all([
 			L.resolveDefault(fs.stat('/usr/libexec/syslog-wrapper'), null),
@@ -63,13 +64,24 @@ return view.extend({
 			return fs.exec_direct(logger).then(logdata => {
 				let loglines = logdata.trim().split(/\n/);
 
-				loglines = loglines.filter(line => {
-					const sevMatch = this.logSeverityFilter === 'any' || line.includes(`.${this.logSeverityFilter}`);
-					const facMatch = this.logFacilityFilter === 'any' || line.includes(`${this.logFacilityFilter}.`);
+				// Filter by facility, and additionally severity string if selected
+				if (this.logSeverityFilter !== 'any') {
+					const sev = this.logSeverityFilter?.toLowerCase?.();
+					const fac = this.logFacilityFilter === 'any'
+						? this.facilities.map(f => f[1]) // all facility short names
+						: [ this.facilities.find(f => f[0] === this.logFacilityFilter)?.[1] ];
 
-					return (this.invertLogSeveritySearch != sevMatch)
-								   && (this.invertLogFacilitySearch != facMatch);
-				});
+					loglines = loglines.filter(line => {
+						const sevMatch = this.logSeverityFilter === 'any' || fac.some(facility => line.includes(`.${sev}`));
+						const facMatch = this.logFacilityFilter === 'any' || fac.some(facility => line.includes(`${facility}.`));
+
+						const finalMatch = (this.invertLogseveritySearch ? !sevMatch : sevMatch)
+						               && (this.invertLogFacilitySearch ? !facMatch : facMatch);
+
+						return finalMatch;
+					});
+
+				}
 
 				loglines = loglines.filter(line => {
 					const match = line.includes(this.logTextFilter);
@@ -110,20 +122,14 @@ return view.extend({
 				'class': 'cbi-button cbi-button-neutral'
 			}, _('Scroll to tail', 'scroll to bottom (the tail) of the log file')
 		);
-		scrollDownButton.addEventListener('click', () => {
-			scrollUpButton.scrollIntoView();
-			scrollDownButton.blur();
-		});
+		scrollDownButton.addEventListener('click', () => scrollUpButton.scrollIntoView());
 
 		const scrollUpButton = E('button', {
 				'id' : 'scrollUpButton',
 				'class': 'cbi-button cbi-button-neutral'
 			}, _('Scroll to head', 'scroll to top (the head) of the log file')
 		);
-		scrollUpButton.addEventListener('click', () => {
-			scrollDownButton.scrollIntoView();
-			scrollUpButton.blur();		
-		});
+		scrollUpButton.addEventListener('click', () => scrollDownButton.scrollIntoView());
 
 		const self = this;
 
@@ -140,13 +146,13 @@ return view.extend({
 			'class': 'cbi-input-select',
 			'style': 'margin-bottom:10px',
 		},
-		this.facilities.map(([_, val, label]) =>
+		this.facilities.map(([val, _, label]) =>
 			E('option', { value: val }, label)
 		));
 
 		// Create severity invert checkbox
 		const severityInvert = E('input', {
-			'id': 'invertLogSeveritySearch',
+			'id': 'invertLogseveritySearch',
 			'type': 'checkbox',
 			'class': 'cbi-input-checkbox',
 		});
@@ -177,10 +183,16 @@ return view.extend({
 			self.logFacilityFilter = facilitySelect.value;
 			self.invertLogFacilitySearch = facilityInvert.checked;
 			self.logSeverityFilter = severitySelect.value;
-			self.invertLogSeveritySearch = severityInvert.checked;
+			self.invertLogseveritySearch = severityInvert.checked;
 			self.logTextFilter = filterTextInput.value;
 			self.invertLogTextSearch = filterTextInvert.checked;
-			self.pollLog();
+			self.retrieveLog().then(log => {
+				const element = document.getElementById('syslog');
+				if (element) {
+					element.value = log.value;
+					element.rows = log.rows;
+				}
+			});
 		}
 
 		facilitySelect.addEventListener('change', handleLogFilterChange);
@@ -198,7 +210,7 @@ return view.extend({
 					facilityInvert,
 					E('label', { 'for': 'logFacilitySelect', 'style': 'margin: 0 5px' }, _('facility:')),
 					facilitySelect,
-					E('label', { 'for': 'invertLogSeveritySearch', 'style': 'margin: 0 5px' }, _('Not')),
+					E('label', { 'for': 'invertLogseveritySearch', 'style': 'margin: 0 5px' }, _('Not')),
 					severityInvert,
 					E('label', { 'for': 'logSeveritySelect', 'style': 'margin: 0 5px' }, _('severity:')),
 					severitySelect,

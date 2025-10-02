@@ -113,10 +113,6 @@ msgid "By setting this, CPU is not aggregate of all processors on the system"
 msgstr ""
 "Ved at indstille dette, er CPU ikke samlet for alle processorer på systemet"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:79
-msgid "CACert"
-msgstr ""
-
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/contextswitch.js:6
 msgid "CPU Context Switches Plugin Configuration"
 msgstr "CPU-kontekst skifter plugin-konfiguration"
@@ -171,7 +167,7 @@ msgstr "Chrony Plugin-konfiguration"
 msgid "Chrony monitoring enabled"
 msgstr "Chrony overvågning aktiveret"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:85
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:72
 msgid "CleanSession"
 msgstr ""
 
@@ -451,7 +447,7 @@ msgstr "Ekstra ting"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:61
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:68
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:88
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:75
 msgid "False"
 msgstr ""
 
@@ -947,7 +943,7 @@ msgstr ""
 msgid "Mqtt Plugin Configuration"
 msgstr ""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:99
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:86
 msgid "Mqtt plugin enabled"
 msgstr ""
 
@@ -1391,18 +1387,6 @@ msgstr "TCP-forbindelser"
 msgid "TCPConns Plugin Configuration"
 msgstr "TCPConns Plugin-konfiguration"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:74
-msgid "TLS 1.2"
-msgstr ""
-
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:75
-msgid "TLS 1.3"
-msgstr ""
-
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:72
-msgid "TLSProtocol"
-msgstr ""
-
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/network.js:15
 msgid "TTL for network packets"
 msgstr "TTL for netværkspakker"
@@ -1723,13 +1707,13 @@ msgstr ""
 msgid "Timeout for polling chrony"
 msgstr "Timeout for polling chrony"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:92
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:79
 msgid "Topic"
 msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:60
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:67
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:87
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:74
 msgid "True"
 msgstr ""
 

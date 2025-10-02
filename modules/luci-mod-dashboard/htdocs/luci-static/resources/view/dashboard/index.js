@@ -12,12 +12,11 @@ document.querySelector('head').appendChild(E('link', {
 }));
 
 function invokeIncludesLoad(includes) {
-	const tasks = [];
-	let has_load = false;
+	var tasks = [], has_load = false;
 
-	for (let i = 0; i < includes.length; i++) {
+	for (var i = 0; i < includes.length; i++) {
 		if (typeof(includes[i].load) == 'function') {
-			tasks.push(includes[i].load().catch(L.bind(() => {
+			tasks.push(includes[i].load().catch(L.bind(function() {
 				this.failed = true;
 			}, includes[i])));
 
@@ -32,12 +31,12 @@ function invokeIncludesLoad(includes) {
 }
 
 function startPolling(includes, containers) {
-	const step = () => {
-		return network.flushCache().then(() => {
+	var step = function() {
+		return network.flushCache().then(function() {
 			return invokeIncludesLoad(includes);
-		}).then(results => {
-			for (let i = 0; i < includes.length; i++) {
-				let content = null;
+		}).then(function(results) {
+			for (var i = 0; i < includes.length; i++) {
+				var content = null;
 
 				if (includes[i].failed)
 					continue;
@@ -60,7 +59,7 @@ function startPolling(includes, containers) {
 				}
 			}
 
-			const ssi = document.querySelector('div.includes');
+			var ssi = document.querySelector('div.includes');
 			if (ssi) {
 				ssi.style.display = '';
 				ssi.classList.add('fade-in');
@@ -68,31 +67,30 @@ function startPolling(includes, containers) {
 		});
 	};
 
-	return step().then(() => {
+	return step().then(function() {
 		poll.add(step);
 	});
 }
 
 return view.extend({
-	load() {
-		return L.resolveDefault(fs.list('/www' + L.resource('view/dashboard/include')), []).then(entries => {
-			return Promise.all(entries.filter(e => {
+	load: function() {
+		return L.resolveDefault(fs.list('/www' + L.resource('view/dashboard/include')), []).then(function(entries) {
+			return Promise.all(entries.filter(function(e) {
 				return (e.type == 'file' && e.name.match(/\.js$/));
-			}).map(e => {
+			}).map(function(e) {
 				return 'view.dashboard.include.' + e.name.replace(/\.js$/, '');
-			}).sort().map(n => {
+			}).sort().map(function(n) {
 				return L.require(n);
 			}));
 		});
 	},
 
-	render(includes) {
-		const rv = E([]);
-		const containers = [];
+	render: function(includes) {
+		var rv = E([]), containers = [];
 
-		for (let i = 0; i < includes.length - 1; i++) {
+		for (var i = 0; i < includes.length - 1; i++) {
 
-			const container = E('div', { 'class': 'section-content' });
+			var container = E('div', { 'class': 'section-content' });
 
 			rv.appendChild(E('div', { 'class': 'cbi-section-' + i, 'style': 'display:none' }, [
 				container
@@ -101,7 +99,7 @@ return view.extend({
 			containers.push(container);
 		}
 
-		return startPolling(includes, containers).then(() => {
+		return startPolling(includes, containers).then(function() {
 			return rv;
 		});
 	},

@@ -277,7 +277,6 @@ body.modal-overlay-active #modal_overlay {
 .modal .button-row {
 	display: flex;
 	justify-content: space-between;
-	flex-wrap: wrap;
 }
 
 .modal .button-row > :not(:last-child) {
@@ -552,9 +551,7 @@ tr.placeholder > td {
 	vertical-align: middle !important;
 }
 
-.nowrap:not(span) {
-/*	Sometimes you need to wrap: badges on narrow screens look weird 
-	and nowrap defeats other width constraints, so exclude span */
+.nowrap {
 	white-space: nowrap !important;
 }
 

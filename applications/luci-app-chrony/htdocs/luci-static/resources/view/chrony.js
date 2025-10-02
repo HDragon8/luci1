@@ -7,18 +7,7 @@
 
 return view.extend({
 
-	load() {
-		return fs.exec_direct('/usr/sbin/chronyd', ['-v']).then(output => {
-			const flags = ['IPv6', 'NTP', 'NTS', 'RTC'];
-			const features = Object.fromEntries(
-				flags.map(flag => [flag.toLowerCase(), output.includes(`+${flag}`)])
-			);
-
-			return features;
-		});
-	},
-
-	render(features) {
+	render(data) {
 		const docUrl = 'https://chrony-project.org/documentation.html';
 		let m, s, o;
 
@@ -39,24 +28,22 @@ return view.extend({
 		o.nocreate = true;
 		o.rmempty = false;
 
-		if (features.nts) {
-			// NTS
-			s = m.section(form.NamedSection, 'nts', 'nts', _('Network Time Security (NTS)'));
-			s.anonymous = true;
-			s.addremove = true;
+		// NTS
+		s = m.section(form.NamedSection, 'nts', 'nts', _('Network Time Security (NTS)'));
+		s.anonymous = true;
+		s.addremove = true;
 
-			o = s.option(form.Flag, 'rtccheck', _('RTC Check'),
-				_('Check for the presence of %s.'.format('<code>/dev/rtc0</code>'), 'Check for RTC character device') + '<br/>' +
-				_('Disables certificate time checks via %s if RTC is absent.'.format('<code>nocerttimecheck</code>') ) );
-			o.default = o.disabled;
+		o = s.option(form.Flag, 'rtccheck', _('RTC Check'),
+			_('Check for the presence of %s.'.format('<code>/dev/rtc0</code>'), 'Check for RTC character device') + '<br/>' +
+			_('Disables certificate time checks via %s if RTC is absent.'.format('<code>nocerttimecheck</code>') ) );
+		o.default = o.disabled;
 
-			o = s.option(form.Flag, 'systemcerts', _('Use system CA bundle'));
-			o.default = o.enabled;
+		o = s.option(form.Flag, 'systemcerts', _('Use system CA bundle'));
+		o.default = o.enabled;
 
-			o = s.option(form.FileUpload, 'trustedcerts', _('Trusted certificates'));
-			o.optional = true;
-			o.root_directory = '/etc';
-		}
+		o = s.option(form.FileUpload, 'trustedcerts', _('Trusted certificates'));
+		o.optional = true;
+		o.root_directory = '/etc';
 
 		// Stepping
 		s = m.section(form.NamedSection, 'makestep', 'makestep', _('Stepping'), 
@@ -133,7 +120,7 @@ return view.extend({
 			_('Remote NTP servers for your chronyd'));
 		s.anonymous = true;
 		s.addremove = true;
-		insertTypedSectionOptions(m, s, o, 'server', features);
+		insertTypedSectionOptions(m, s, o, 'server');
 
 		// Pool entries
 		s = m.section(form.TypedSection, 'pool', _('Pool'),
@@ -141,7 +128,7 @@ return view.extend({
 			_('The pool name is expected to resolve to multiple addresses which might change over time.'));
 		s.anonymous = true;
 		s.addremove = true;
-		insertTypedSectionOptions(m, s, o, 'pool', features);
+		insertTypedSectionOptions(m, s, o, 'pool');
 
 		// Peer entries
 		s = m.section(form.TypedSection, 'peer', _('Peer'),
@@ -149,20 +136,20 @@ return view.extend({
 			_('A single symmetric association allows the peers to be both servers and clients to each other.'));
 		s.anonymous = true;
 		s.addremove = true;
-		insertTypedSectionOptions(m, s, o, 'peer', features);
+		insertTypedSectionOptions(m, s, o, 'peer');
 
 		// Servers assigned (to us) via DHCP
 		s = m.section(form.NamedSection, 'dhcp_ntp_server', 'dhcp_ntp_server', _('DHCP(v6)'),
 			_('Options for servers provided to this host via DHCP(v6) (via the WAN for example).'));
 		s.anonymous = true;
-		insertTypedSectionOptions(m, s, o, 'dhcp_ntp_server', features);
+		insertTypedSectionOptions(m, s, o, 'dhcp_ntp_server');
 
 
 		return m.render();
 	}
 });
 
-function insertTypedSectionOptions(m, s, o, type, features) {
+function insertTypedSectionOptions(m, s, o, type) {
 
 		o = s.option(form.Flag, 'disabled', _('Disabled'));
 		o.default = o.disabled; // disabled default is disabled i.e., enabled
@@ -179,12 +166,10 @@ function insertTypedSectionOptions(m, s, o, type, features) {
 			o.default = o.disabled
 			o.depends('disabled', '0');
 
-			if (features.nts) {
-				o = s.option(form.Flag, 'nts', _('NTS'));
-				o.rmempty = true;
-				o.default = o.disabled
-				o.depends('disabled', '0');
-			}
+			o = s.option(form.Flag, 'nts', _('NTS'));
+			o.rmempty = true;
+			o.default = o.disabled
+			o.depends('disabled', '0');
 		}
 
 		o = s.option(form.Flag, 'prefer', _('Prefer'));

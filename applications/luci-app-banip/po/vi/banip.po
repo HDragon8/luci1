@@ -1319,6 +1319,3 @@ msgstr ""
 #: applications/luci-app-banip/htdocs/luci-static/resources/view/banip/overview.js:592
 msgid "warn"
 msgstr "cảnh báo"
-
-#~ msgid "Elements"
-#~ msgstr "Các phần tử"

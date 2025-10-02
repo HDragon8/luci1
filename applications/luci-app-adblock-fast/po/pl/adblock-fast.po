@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-09-07 21:06+0000\n"
+"PO-Revision-Date: 2025-08-11 21:03+0000\n"
 "Last-Translator: Matthaiks <kitynska@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsadblock-fast/pl/>\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #: applications/luci-app-adblock-fast/htdocs/luci-static/resources/adblock-fast/status.js:99
 msgid "%s is currently disabled"
@@ -736,11 +736,11 @@ msgstr "Wersja %s"
 
 #: applications/luci-app-adblock-fast/htdocs/luci-static/resources/adblock-fast/status.js:67
 msgid "Waiting for trigger (on_boot)"
-msgstr "Oczekiwanie na wyzwalacz (przy rozruchu)"
+msgstr ""
 
 #: applications/luci-app-adblock-fast/htdocs/luci-static/resources/adblock-fast/status.js:68
 msgid "Waiting for trigger (on_start)"
-msgstr "Oczekiwanie na wyzwalacz (przy uruchamianiu)"
+msgstr ""
 
 #: applications/luci-app-adblock-fast/htdocs/luci-static/resources/view/adblock-fast/overview.js:244
 msgid ""
@@ -796,7 +796,7 @@ msgstr "Nie udało się przywrócić pliku archiwum %s"
 
 #: applications/luci-app-adblock-fast/htdocs/luci-static/resources/view/adblock-fast/overview.js:334
 msgid "none"
-msgstr "brak"
+msgstr "Brak"
 
 #: applications/luci-app-adblock-fast/htdocs/luci-static/resources/view/adblock-fast/overview.js:146
 msgid "smartdns domain set"
@@ -813,50 +813,3 @@ msgstr "Zestaw nft smartdns"
 #: applications/luci-app-adblock-fast/htdocs/luci-static/resources/view/adblock-fast/overview.js:155
 msgid "unbound adblock list"
 msgstr "lista blokowania reklam unbound"
-
-#~ msgid "Error"
-#~ msgstr "Błąd"
-
-#~ msgid "Fail"
-#~ msgstr "Niepowodzenie"
-
-#~ msgid "Warning"
-#~ msgstr "Ostrzeżenie"
-
-#~ msgid "AdBlock on all instances"
-#~ msgstr "Na wszystkich instancjach"
-
-#~ msgid "AdBlock on select instances"
-#~ msgstr "Blokowanie reklam na wszystkich instancjach"
-
-#~ msgid "No AdBlock on SmartDNS"
-#~ msgstr "Brak usługi blokowania reklam na SmartDNS"
-
-#~ msgid "No AdBlock on dnsmasq"
-#~ msgstr "Brak usługi blokowania reklam na dnsmasq"
-
-#~ msgid "Pick the SmartDNS instance(s) for AdBlocking"
-#~ msgstr "Wybierz instancje SmartDNS do blokowania reklam"
-
-#~ msgid "Pick the dnsmasq instance(s) for AdBlocking"
-#~ msgstr "Wybierz instancje dnsmasq do blokowania reklam"
-
-#~ msgid "Use AdBlocking on the SmartDNS instance(s)"
-#~ msgstr "Użyj blokowania reklam w instancjach SmartDNS"
-
-#~ msgid "Use AdBlocking on the dnsmasq instance(s)"
-#~ msgstr "Użyj blokowania reklam w instancjach dnsmasq"
-
-#~ msgid ""
-#~ "You can limit the AdBlocking to the specific SmartDNS instance(s) (%smore "
-#~ "information%s)."
-#~ msgstr ""
-#~ "Możesz ograniczyć blokowanie reklam do określonych instancji SmartDNS "
-#~ "(%swięcej informacji%s)."
-
-#~ msgid ""
-#~ "You can limit the AdBlocking to the specific dnsmasq instance(s) (%smore "
-#~ "information%s)."
-#~ msgstr ""
-#~ "Możesz ograniczyć blokowanie reklam do określonych instancji dnsmasq "
-#~ "(%swięcej informacji%s)."

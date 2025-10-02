@@ -924,12 +924,3 @@ msgstr ""
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:336
 msgid "unbound"
 msgstr ""
-
-#~ msgid "Base Temp Directory"
-#~ msgstr "Cartella base temporanea"
-
-#~ msgid "Low Priority Service"
-#~ msgstr "Servizio a bassa priorità"
-
-#~ msgid "Run Utils"
-#~ msgstr "Avvia utilità"

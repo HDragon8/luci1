@@ -918,12 +918,3 @@ msgstr ""
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:336
 msgid "unbound"
 msgstr ""
-
-#~ msgid "Base Temp Directory"
-#~ msgstr "Đường dẫn thư mục tạm"
-
-#~ msgid "Low Priority Service"
-#~ msgstr "Dịch vụ ưu tiên thấp"
-
-#~ msgid "Run Utils"
-#~ msgstr "Chạy Công cụ"
