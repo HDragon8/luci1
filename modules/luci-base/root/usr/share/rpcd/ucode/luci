@@ -620,6 +620,18 @@ const methods = {
 		}
 	},
 
+	packageVersionCheck: {
+		args: { name: 'netifd' },
+		call: function(request) {
+			let version = "";
+			const pkg = request?.args?.name;
+
+			version = callPackageVersionCheck(pkg);
+
+			return { result: version };
+		}
+	},
+
 	getCPUBench: {
 		call: function() {
 			return { cpubench: readfile('/etc/bench.log') || '' };
